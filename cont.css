@@ -1,0 +1,36 @@
+form {
+      padding: 25px;
+      margin-right: 10px;
+      box-shadow: 0 2px 5px #f5f5f5; 
+      background: #FFCCCB; 
+      width:100%;
+      }
+      input, textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid red;
+      outline: none;
+      }
+      input::placeholder {
+      color: #666;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: red; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+      background: #2371a0;
+      }    
+      
+      @media (min-width: 568px) {
+      .main-block {
+  
+      }
+
+      }
