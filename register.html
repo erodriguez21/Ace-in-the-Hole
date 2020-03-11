@@ -5,14 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Contact Us</title>
+    <title>Register</title>
         <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed" rel="stylesheet">
-    <link href="css/ace.css" rel="stylesheet" type="text/css">
-    <link href="css/cont.css" rel="stylesheet" type="text/css">
-    <link href="css/reg.css" rel="stylesheet" type="text/css">
-	
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed" rel="stylesheet">
+    <link href="css/ace.css" rel="stylesheet">
+    <link href="css/cont.css" rel="stylesheet">
+    <link href="css/reg.css" rel="stylesheet">
+	<script type="text/javascript">
+		var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
+		var zf_MandArray = ["Dropdown", "PhoneNumber_countrycode", "Checkbox"];
+		var zf_FieldArray = ["Dropdown", "Name_First", "Name_Last", "Email", "PhoneNumber_countrycode", "Checkbox"];
+		var isSalesIQIntegrationEnabled = false;
+		var salesIQFieldsArray = [];
+    </script>
 	<script>
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 	</script>
@@ -22,8 +28,8 @@
 <body class="zf-backgroundBg">
     <div id="masthead">
         <header class="wrapper">
-            <div id="company-logo">
-                   <a href ="index.html"><img id="ace" src="img/acelogo.jpg" alt="About Us image">
+           <div id="company-logo">   
+         <a href ="index.html"><img id="ace" src="img/acelogo.jpg" alt="About Us image">
             </div>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -43,8 +49,8 @@
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="faqs.html">FAQS</a></li>
                             <li><a href="packet.html">Packet</a></li>
-                            <li class="active"><a href="#">Contact Us <span class="sr-only">(current)</span></a></li>
-							<li><a href="register.html">Registration</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li class="active"><a href="#">Registration<span class="sr-only">(current)</span></a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -56,22 +62,22 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/validation.js"></script>
+
         </header>
     </div>
     <div id="content-outer">
         <main class="wrapper">
-            <article>      
-<!-- Change or deletion of the name attributes in the input tag will lead to empty values on record submission-->
+            <article>
+                <!-- Change or deletion of the name attributes in the input tag will lead to empty values on record submission-->
     <div class="zf-templateWidth">
-        <form action='https://forms.zohopublic.com/efrain216662/form/Eventregistration/formperma/2DPjAmTzV0HMtLitKbyoy0pffjP_7EaQO-zCaUGPagc/htmlRecords/submit' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'><input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+        <form action='https://forms.zohopublic.com/efrain216662/form/Eventregistration1/formperma/ETXcjDJ_0BOXAgo7V2TOWNqSlbD0OtJ_9SxKDj_d_kI/htmlRecords/submit' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'><input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
             <input type="hidden" name="zf_redirect_url" value=""><!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
             <input type="hidden" name="zc_gad" value=""><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
             <div class="zf-templateWrapper">
                 <!---------template Header Starts Here---------->
                 <ul class="zf-tempHeadBdr">
                     <li class="zf-tempHeadContBdr">
-                        <h2 class="zf-frmTitle"><em>Contact Us</em></h2>
+                        <h2 class="zf-frmTitle"><em>Event Registration</em></h2>
                         <p class="zf-frmDesc"></p>
                         <div class="zf-clearBoth"></div>
                     </li>
@@ -80,9 +86,26 @@
                 <!---------template Container Starts Here---------->
                 <div class="zf-subContWrap zf-topAlign">
                     <ul>
+                        <!---------Dropdown Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Course Selection
+                                <em class="zf-important">*</em>
+                            </label>
+                            <div class="zf-tempContDiv"><select class="zf-form-sBox" name="Dropdown" checktype="c1">
+                                    <option selected="true" value="-Select-">-Select-</option>
+                                    <option value="Long&#x20;Course">Long Course</option>
+                                    <option value="Olympic">Olympic</option>
+                                    <option value="10K">10K</option>
+                                    <option value="Half&#x20;Marathon">Half Marathon</option>
+                                    <option value="Sprint">Sprint</option>
+                                    <option value="Try-a-Tri">Try-a-Tri</option>
+                                </select>
+                                <p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                            <div class="zf-clearBoth"></div>
+                        </li>
+                        <!---------Dropdown Ends Here---------->
                         <!---------Name Starts Here---------->
                         <li class="zf-tempFrmWrapper zf-name zf-namemedium"><label class="zf-labelName">Name
-                                <em class="zf-important">*</em>
                             </label>
                             <div class="zf-tempContDiv zf-twoType">
                                 <div class="zf-nameWrapper">
@@ -99,7 +122,6 @@
                         <!---------Name Ends Here---------->
                         <!---------Email Starts Here---------->
                         <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Email
-                                <em class="zf-important">*</em>
                             </label>
                             <div class="zf-tempContDiv"><span> <input fieldType=9 type="text" maxlength="255" name="Email" checktype="c5" value="" /></span>
                                 <p id="Email_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
@@ -122,29 +144,18 @@
                             <div class="zf-clearBoth"></div>
                         </li>
                         <!---------Phone Ends Here---------->
-                        <!---------Multiple Line Starts Here---------->
-                        <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Questions
-                            </label>
-                            <div class="zf-tempContDiv"><span> <textarea name="MultiLine" checktype="c1" maxlength="65535"></textarea> </span>
-                                <p id="MultiLine_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
-                            </div>
-                            <div class="zf-clearBoth"></div>
-                        </li>
-                        <!---------Multiple Line Ends Here---------->
                         <!---------Checkbox Starts Here---------->
-                        <li class="zf-checkbox zf-tempFrmWrapper zf-oneColumns"><label class="zf-labelName">Are you a ...
+                        <li class="zf-checkbox zf-tempFrmWrapper zf-oneColumns"><label class="zf-labelName">Pay at...
+                                <em class="zf-important">*</em>
                             </label>
                             <div class="zf-tempContDiv">
                                 <div class="zf-overflow">
                                     <span class="zf-multiAttType">
-                                        <input class="zf-checkBoxType" type="checkbox" id="Checkbox_1" name="Checkbox" checktype="c1" value="Athlete" />
-                                        <label for="Checkbox_1" class="zf-checkChoice">Athlete</label> </span>
+                                        <input class="zf-checkBoxType" type="checkbox" id="Checkbox_1" name="Checkbox" checktype="c1" value="At&#x20;event" />
+                                        <label for="Checkbox_1" class="zf-checkChoice">At&#x20;event</label> </span>
                                     <span class="zf-multiAttType">
-                                        <input class="zf-checkBoxType" type="checkbox" id="Checkbox_2" name="Checkbox" checktype="c1" value="Volunteer" />
-                                        <label for="Checkbox_2" class="zf-checkChoice">Volunteer</label> </span>
-                                    <span class="zf-multiAttType">
-                                        <input class="zf-checkBoxType" type="checkbox" id="Checkbox_3" name="Checkbox" checktype="c1" value="Interested&#x20;party" />
-                                        <label for="Checkbox_3" class="zf-checkChoice">Interested&#x20;party</label> </span>
+                                        <input class="zf-checkBoxType" type="checkbox" id="Checkbox_2" name="Checkbox" checktype="c1" value="Phone" />
+                                        <label for="Checkbox_2" class="zf-checkChoice">Phone</label> </span>
                                     <div class="zf-clearBoth"></div>
                                 </div>
                                 <p id="Checkbox_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
@@ -152,6 +163,21 @@
                             <div class="zf-clearBoth"></div>
                         </li>
                         <!---------Checkbox Ends Here---------->
+                        <!---------Description Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-note"><label class="zf-descFld">
+                                <p style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(98, 105, 136); font-family: &quot;Libre Baskerville&quot;, null; font-size: medium; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255)">Thank you for joining the competition, there will be,<br /></p>
+                                <p style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(98, 105, 136); font-family: &quot;Libre Baskerville&quot;, null; font-size: medium; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255)"></p>
+                                <div>Food &amp; Beer<br /></div>
+                                <div>Access to the weekend&#39;s live entertainment &amp; Fitness Expo<br /></div>
+                                <div>Commemorative Finisher medal<br /></div>
+                                <div>Accurate Chip Timing for competitive races<br /></div>
+                                <div>Ace in the Hole Multisport Weekend Tech Shirt<br /></div>
+                                <div>Post-event party &amp; entertainment<br /></div>
+                                <p></p>Add content...<div><br /></div>
+                            </label>
+                            <div class="zf-clearBoth"></div>
+                        </li>
+                        <!---------Description Ends Here---------->
                     </ul>
                 </div>
                 <!---------template Container Starts Here---------->
@@ -161,16 +187,9 @@
             </div><!-- 'zf-templateWrapper' ends -->
         </form>
     </div><!-- 'zf-templateWidth' ends -->
-    <script type="text/javascript">
-        var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
-        var zf_MandArray = ["Name_First", "Name_Last", "Email", "PhoneNumber_countrycode"];
-        var zf_FieldArray = ["Name_First", "Name_Last", "Email", "PhoneNumber_countrycode", "MultiLine", "Checkbox"];
-        var isSalesIQIntegrationEnabled = false;
-        var salesIQFieldsArray = [];
-    </script>
-            </article>
+			</article>
             <aside>
-			<a class="weatherwidget-io" href="https://forecast7.com/en/45d52n122d68/portland/" data-label_1="PORTLAND" data-label_2="WEATHER" data-font="Times New Roman" data-icons="Climacons Animated" data-theme="ruby" >PORTLAND WEATHER</a>
+  			<a class="weatherwidget-io" href="https://forecast7.com/en/45d52n122d68/portland/" data-label_1="PORTLAND" data-label_2="WEATHER" data-font="Times New Roman" data-icons="Climacons Animated" data-theme="ruby" >PORTLAND WEATHER</a>
 			<br>
        		<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D110944337146713%26id%3D110661963841617&width=100%25&show_text=true&height=186&appId" width="100%" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
        		<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D110671210507359%26id%3D110661963841617&width=100%25&show_text=true&height=214&appId" width="100%" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
